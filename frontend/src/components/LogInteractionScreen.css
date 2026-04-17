@@ -1,0 +1,127 @@
+.log-interaction-screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Header ─── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  font-size: 24px;
+}
+
+.header-logo h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.logo-accent {
+  color: var(--accent);
+}
+
+.header-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
+}
+
+.user-badge {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  background: var(--accent-light);
+  color: var(--accent);
+  border-radius: 20px;
+}
+
+/* ─── Main Layout ─── */
+.screen-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 57px);
+}
+
+.main-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.form-chat-container {
+  display: flex;
+  height: 100%;
+}
+
+.form-panel {
+  flex: 1;
+  overflow-y: auto;
+  border-right: 1px solid var(--border);
+  padding: 24px;
+}
+
+.chat-panel {
+  width: 25%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-chat);
+}
+
+.side-panel {
+  width: 320px;
+  min-width: 280px;
+  border-left: 1px solid var(--border);
+  background: var(--bg-card);
+  overflow-y: auto;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1200px) {
+  .side-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .form-chat-container {
+    flex-direction: column;
+  }
+  .form-panel {
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .chat-panel {
+    width: 100%;
+    min-width: 100%;
+    height: 400px;
+  }
+}
